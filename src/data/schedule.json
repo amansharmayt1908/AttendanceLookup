@@ -1,0 +1,42 @@
+{
+  "schedule": {
+    "Monday": [
+      { "id": "physics", "time": "9:00 AM" },
+      { "id": "electrical", "time": "10:00 AM" },
+      { "id": "mechanics", "time": "11:00 AM" },
+      { "id": "mechanics", "time": "12:00 PM" },
+      { "id": "math", "time": "2:00 PM" }
+    ],
+    "Tuesday": [
+      { "id": "computer", "time": "9:00 AM" },
+      { "id": "math", "time": "10:00 AM" },
+      { "id": "computer", "time": "11:00 AM" },
+      { "id": "computer", "time": "12:00 PM" },
+      { "id": "electrical", "time": "2:00 PM" }
+    ],
+    "Wednesday": [
+      { "id": "physics", "time": "9:00 AM" },
+      { "id": "french", "time": "10:00 AM" },
+      { "id": "computer", "time": "11:00 AM" },
+      { "id": "mechanics", "time": "12:00 PM" },
+      { "id": "maths", "time": "2:00 PM" },
+      { "id": "bc", "time": "2:00 PM" },
+      { "id": "physics", "time": "3:00 PM" },
+      { "id": "physics", "time": "4:00 PM" }
+    ],
+    "Thursday": [
+      { "id": "mechanics", "time": "9:00 AM" },
+      { "id": "math", "time": "10:00 AM" },
+      { "id": "electrical", "time": "11:00 AM" },
+      { "id": "bc", "time": "12:00 PM" }
+    ],
+    "Friday": [
+      { "id": "computer", "time": "9:00 AM" },
+      { "id": "french", "time": "10:00 AM" },
+      { "id": "mechanics", "time": "11:00 AM"},
+      { "id": "physics", "time": "12:00 PM" },
+      { "id": "electrical", "time": "2:00 PM" },
+      { "id": "electrical", "time": "3:00 PM" }
+    ]
+  }
+} 

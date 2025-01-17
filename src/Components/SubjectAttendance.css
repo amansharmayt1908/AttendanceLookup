@@ -1,0 +1,241 @@
+.subject-attendance-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+.mark-all-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.mark-all-button {
+  flex: 1;
+  min-width: 120px;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.mark-all-button.present {
+  background: rgba(6, 95, 70, 0.9);
+  color: #d1fae5;
+}
+
+.mark-all-button.present:hover:not(:disabled) {
+  background: rgba(6, 95, 70, 1);
+}
+
+.mark-all-button.absent {
+  background: rgba(127, 29, 29, 0.9);
+  color: #fecaca;
+}
+
+.mark-all-button.absent:hover:not(:disabled) {
+  background: rgba(127, 29, 29, 1);
+}
+
+.mark-all-button.clear {
+  background: rgba(45, 45, 45, 0.9);
+  color: #e0e0e0;
+}
+
+.mark-all-button.clear:hover:not(:disabled) {
+  background: rgba(45, 45, 45, 1);
+}
+
+.mark-all-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.subjects-list-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: rgba(45, 45, 45, 0.95);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+}
+
+.subject-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.subject-row:hover {
+  transform: translateX(4px);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.subject-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 120px;
+  margin-right: 1rem;
+}
+
+.subject-name {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.subject-time {
+  color: #a0aec0;
+  font-size: 0.8rem;
+}
+
+.attendance-options {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.attendance-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #e0e0e0;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.attendance-label:hover:not(:has(input:disabled)) {
+  background: rgba(96, 165, 250, 0.1);
+}
+
+.attendance-checkbox {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  accent-color: #60a5fa;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.attendance-checkbox:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.attendance-label:has(input:checked:not(:disabled)) {
+  color: #60a5fa;
+  font-weight: 500;
+  background: rgba(96, 165, 250, 0.15);
+}
+
+.clear-button {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #a0aec0;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.clear-button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #e0e0e0;
+}
+
+.clear-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.status-message {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.status-message.success {
+  background: rgba(6, 95, 70, 0.9);
+  color: #d1fae5;
+  border: 1px solid rgba(209, 250, 229, 0.2);
+}
+
+.status-message.error {
+  background: rgba(127, 29, 29, 0.9);
+  color: #fecaca;
+  border: 1px solid rgba(254, 202, 202, 0.2);
+}
+
+.no-classes {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(45, 45, 45, 0.95);
+  border-radius: 16px;
+  color: #a0aec0;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 480px) {
+  .mark-all-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mark-all-button {
+    width: 100%;
+  }
+
+  .subject-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .subject-info {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .attendance-options {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+
+  .attendance-label {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.5rem;
+  }
+} 

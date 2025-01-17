@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.days-container {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.day-card {
+  background: rgba(45, 45, 45, 0.95);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 1rem auto;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.day-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.day-name {
+  margin: 0 0 1.5rem 0;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.5px;
+}
+
+.attendance-options {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+
+.attendance-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.attendance-label:hover {
+  background: rgba(96, 165, 250, 0.1);
+}
+
+.attendance-checkbox {
+  width: 1.3rem;
+  height: 1.3rem;
+  cursor: pointer;
+  accent-color: #60a5fa;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.attendance-label:has(input:checked) {
+  color: #60a5fa;
+  font-weight: 500;
+  background: rgba(96, 165, 250, 0.15);
+}
+
+.mark-button {
+  display: block;
+  width: 100%;
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mark-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.mark-button:disabled {
+  background: #4b5563;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.status-message {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.status-message.success {
+  background: rgba(6, 95, 70, 0.9);
+  color: #d1fae5;
+  border: 1px solid rgba(209, 250, 229, 0.2);
+}
+
+.status-message.error {
+  background: rgba(127, 29, 29, 0.9);
+  color: #fecaca;
+  border: 1px solid rgba(254, 202, 202, 0.2);
+}
+
+.clear-button {
+  display: block;
+  width: auto;
+  margin: 1rem auto 0;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #a0aec0;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clear-button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #e0e0e0;
+}
+
+.clear-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.today-status {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #e0e0e0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.today-status span {
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.today-status span.present {
+  background: rgba(6, 95, 70, 0.2);
+  color: #4ade80;
+}
+
+.today-status span.absent {
+  background: rgba(127, 29, 29, 0.2);
+  color: #f87171;
+}
+
+@media (max-width: 480px) {
+  .day-card {
+    padding: 1.5rem;
+  }
+  
+  .attendance-options {
+    gap: 1.5rem;
+    padding: 0.3rem;
+  }
+  
+  .day-name {
+    font-size: 1.75rem;
+  }
+  
+  .attendance-label {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .mark-button {
+    font-size: 1rem;
+    padding: 0.9rem;
+  }
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.show-absent-button {
+  background: rgba(127, 29, 29, 0.9);
+  color: #fecaca;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.show-absent-button:hover {
+  background: rgba(127, 29, 29, 1);
+  transform: translateY(-1px);
+}
+
+.show-absent-button.standalone {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  margin: 1rem auto;
+  background: rgba(127, 29, 29, 0.9);
+  color: #fecaca;
+  border: none;
+  padding: 1rem;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.show-absent-button.standalone:hover {
+  background: rgba(127, 29, 29, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+} 

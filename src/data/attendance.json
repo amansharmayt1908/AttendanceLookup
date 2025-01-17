@@ -1,0 +1,49 @@
+{
+  "records": [
+    {
+      "date": "2025-01-17",
+      "day": "Friday",
+      "status": "absent",
+      "timestamp": "2025-01-17T17:38:17.986Z",
+      "subject": "computer",
+      "subjectName": "C++",
+      "time": "9:00 AM"
+    },
+    {
+      "date": "2025-01-17",
+      "day": "Friday",
+      "status": "absent",
+      "timestamp": "2025-01-17T17:38:17.986Z",
+      "subject": "french",
+      "subjectName": "French",
+      "time": "10:00 AM"
+    },
+    {
+      "date": "2025-01-17",
+      "day": "Friday",
+      "status": "absent",
+      "timestamp": "2025-01-17T17:38:17.986Z",
+      "subject": "mechanics",
+      "subjectName": "Mechanics",
+      "time": "11:00 AM"
+    },
+    {
+      "date": "2025-01-17",
+      "day": "Friday",
+      "status": "absent",
+      "timestamp": "2025-01-17T17:38:17.986Z",
+      "subject": "physics",
+      "subjectName": "Physics",
+      "time": "12:00 PM"
+    },
+    {
+      "date": "2025-01-17",
+      "day": "Friday",
+      "status": "absent",
+      "timestamp": "2025-01-17T17:38:17.986Z",
+      "subject": "electrical",
+      "subjectName": "Electrical Engineering",
+      "time": "2:00 PM"
+    }
+  ]
+}

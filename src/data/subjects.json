@@ -1,0 +1,32 @@
+{
+  "subjects": [
+    {
+      "id": "physics",
+      "name": "Physics"
+    },
+    {
+      "id": "math",
+      "name": "Mathematics"
+    },
+    {
+      "id": "bc",
+      "name": "Business Communication"
+    },
+    {
+      "id": "french",
+      "name": "French"
+    },
+    {
+      "id": "mechanics",
+      "name": "Mechanics"
+    },
+    {
+      "id": "computer",
+      "name": "C++"
+    },
+    {
+      "id": "electrical",
+      "name": "Electrical Engineering"
+    }
+  ]
+} 
