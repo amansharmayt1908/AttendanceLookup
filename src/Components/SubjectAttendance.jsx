@@ -26,7 +26,12 @@ const SubjectAttendance = () => {
 
   const checkTodayAttendance = async () => {
     try {
-      const response = await fetch('/api/attendance');
+      const token = localStorage.getItem('authToken');
+      const response = await fetch('/api/attendance', {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
       const data = await response.json();
       const today = new Date().toISOString().split('T')[0];
       
@@ -53,6 +58,7 @@ const SubjectAttendance = () => {
     
     setIsLoading(true);
     try {
+      const token = localStorage.getItem('authToken');
       const date = new Date();
       const record = {
         date: date.toISOString().split('T')[0],
@@ -66,6 +72,7 @@ const SubjectAttendance = () => {
       const response = await fetch('/api/attendance', {
         method: 'POST',
         headers: {
+          'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(record)
@@ -96,9 +103,13 @@ const SubjectAttendance = () => {
   const clearAttendance = async (subject) => {
     setIsLoading(true);
     try {
+      const token = localStorage.getItem('authToken');
       const today = new Date().toISOString().split('T')[0];
       const response = await fetch(`/api/attendance/${today}/${subject.id}`, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
       });
 
       if (response.ok) {

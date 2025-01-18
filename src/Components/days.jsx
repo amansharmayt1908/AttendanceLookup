@@ -23,7 +23,12 @@ const Days = () => {
 
   const checkTodayAttendance = async () => {
     try {
-      const response = await fetch('/api/attendance');
+      const token = localStorage.getItem('authToken');
+      const response = await fetch('/api/attendance', {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
       const data = await response.json();
       const today = new Date().toISOString().split('T')[0];
       const todayRecord = data.records.find(record => record.date === today);
@@ -47,9 +52,13 @@ const Days = () => {
   const clearAttendance = async () => {
     setIsLoading(true);
     try {
+      const token = localStorage.getItem('authToken');
       const today = new Date().toISOString().split('T')[0];
       const response = await fetch(`/api/attendance/${today}`, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
       });
 
       if (response.ok) {
@@ -69,6 +78,7 @@ const Days = () => {
 
   const saveAttendance = async () => {
     try {
+      const token = localStorage.getItem('authToken');
       const date = new Date();
       const dayName = currentDay;
       const todaySchedule = scheduleData.schedule[dayName] || [];
@@ -94,6 +104,7 @@ const Days = () => {
         const response = await fetch('/api/attendance', {
           method: 'POST',
           headers: {
+            'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(subjectRecord)

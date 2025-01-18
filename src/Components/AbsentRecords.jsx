@@ -13,11 +13,20 @@ const AbsentRecords = ({ isOpen, onClose }) => {
 
   const fetchAbsentRecords = async () => {
     try {
-      const response = await fetch('/api/attendance');
+      const token = localStorage.getItem('authToken');
+      const response = await fetch('/api/attendance', {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
       const data = await response.json();
       
-      // Filter for absent records
-      const absents = data.records.filter(record => record.status === 'absent' && record.subject);
+      // Filter for absent records for current user
+      const absents = data.records.filter(record => 
+        record.status === 'absent' && 
+        record.subject &&
+        record.username === data.currentUser
+      );
 
       // Group by subject
       const groupedRecords = absents.reduce((groups, record) => {

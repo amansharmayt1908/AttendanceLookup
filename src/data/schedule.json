@@ -37,6 +37,13 @@
       { "id": "physics", "time": "12:00 PM" },
       { "id": "electrical", "time": "2:00 PM" },
       { "id": "electrical", "time": "3:00 PM" }
+    ],"Saturday": [
+      { "id": "computer", "time": "9:00 AM" },
+      { "id": "french", "time": "10:00 AM" },
+      { "id": "mechanics", "time": "11:00 AM"},
+      { "id": "physics", "time": "12:00 PM" },
+      { "id": "electrical", "time": "2:00 PM" },
+      { "id": "electrical", "time": "3:00 PM" }
     ]
   }
 } 
