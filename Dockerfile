@@ -20,9 +20,10 @@ RUN npm run build
 EXPOSE 3001
 EXPOSE 5173
 
-# Create a script to run both frontend and backend
-RUN echo '#!/bin/sh\nnpm run server & npm run dev' > start.sh
-RUN chmod +x start.sh
+# Create a script to run both frontend and backend with proper line endings
+RUN echo '#!/bin/sh' > /app/start.sh && \
+    echo 'npm run server & npm run dev' >> /app/start.sh && \
+    chmod +x /app/start.sh
 
-# Set the start command
-CMD ["./start.sh"]
+# Set the start command with full path
+CMD ["/bin/sh", "/app/start.sh"]
