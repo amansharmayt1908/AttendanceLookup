@@ -13,6 +13,7 @@ const PORT = 3001;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'dist')));
 
 const ATTENDANCE_FILE = path.join(__dirname, 'src', 'data', 'attendance.json');
 const SUBJECTS_FILE = path.join(__dirname, 'src', 'data', 'subjects.json');
@@ -253,6 +254,11 @@ app.delete('/api/users/:username', authenticateToken, async (req, res) => {
     console.error('Error deleting user:', error);
     res.status(500).json({ message: 'Failed to delete user' });
   }
+});
+
+// Add this catch-all route after all your API routes (at the end before initializeServer)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 // Initialize the server

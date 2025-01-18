@@ -16,13 +16,12 @@ COPY . .
 # Build the React application
 RUN npm run build
 
-# Expose ports for both frontend and backend
+# Expose port for backend (we only need one port now)
 EXPOSE 3001
-EXPOSE 5173
 
-# Create a script to run both frontend and backend with proper line endings
+# Create a script to run the server
 RUN echo '#!/bin/sh' > /app/start.sh && \
-    echo 'cd /app && npm run server & npm run dev' >> /app/start.sh && \
+    echo 'cd /app && node server.js' >> /app/start.sh && \
     chmod +x /app/start.sh
 
 # Set the start command with full path
