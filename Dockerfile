@@ -22,7 +22,7 @@ EXPOSE 5173
 
 # Create a script to run both frontend and backend with proper line endings
 RUN echo '#!/bin/sh' > /app/start.sh && \
-    echo 'npm run server & npm run dev' >> /app/start.sh && \
+    echo 'cd /app && npm run server & npm run dev' >> /app/start.sh && \
     chmod +x /app/start.sh
 
 # Set the start command with full path
